@@ -1,15 +1,41 @@
+import { useState } from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Header from "./Header";
+import Sidebar from "./Sidebar";
+import Hero from "./Hero";
+const Layout = ({ children, title, description }) => {
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function Layout({ children }) {
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div className="flex justify-center bg-gray-200">
-      <div className=" flex flex-col min-h-screen w-full">
-        <Header />
+    <div>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Head>
 
-        <div className="flex-grow">{children}</div>
-        <Footer />
-      </div>
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <main className="">
+        {" "}
+        {router.pathname === "/" && <Hero />}
+        {children}
+      </main>
+
+      <Footer />
     </div>
   );
-}
+};
+
+Layout.defaultProps = {
+  title: "QDs Double Barrel BBQ",
+  description: "Delicious family owned BBQ",
+  keywords: "bbq, pop up truck, bbq truck, antelope valley restaurant",
+};
+
+export default Layout;

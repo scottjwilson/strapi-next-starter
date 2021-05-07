@@ -5,7 +5,9 @@
       "@/components/*": ["components/*"],
       "@/config/*": ["config/*"],
       "@/context/*": ["context/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/graphql/*": ["graphql/*"],
+      "@/helpers/*": ["helpers/*"]
     }
   }
 }

@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="sm:w-2/3 text-center py-6">
             <p className="text-sm text-red-700 font-bold mb-2">
               © {new Date().getFullYear()}
-              Copyright
+              QD'S DOUBLE BARREL BBQ
             </p>
           </div>
         </div>

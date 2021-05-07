@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: @apply font-barlow;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+input,
+button {
+  @apply font-barlow;
+}
+
+/* NAVBAR */
+
+.primary-nav {
+  @apply hidden md:flex items-center space-x-4;
+}
+.nav-link {
+  @apply py-5 px-2 uppercase text-sm font-bold italic font-barlow text-gray-700 hover:text-red-500 transition ease-in-out duration-500;
+}
+
+.brand {
+  @apply text-xl font-bold uppercase text-gray-900 font-barlow flex items-center;
+}
+
+.secondary-nav {
+  @apply flex items-center space-x-2;
+}
+
+.profile-link {
+  @apply py-2 px-4 hover:bg-gray-300 hover:shadow rounded-xl transition ease-in-out duration-500;
+}
+
+.order-badge {
+  @apply absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full;
+}
+
 /* FORMS */
 
 .form-container {
@@ -21,7 +63,7 @@
 }
 
 .form-button {
-  @apply transition duration-500 ease-in-out py-3 my-2 text-white bg-gray-800 hover:bg-gray-600 rounded-xl;
+  @apply transition duration-500 font-barlow ease-in-out py-3 my-2 text-white bg-gray-800 hover:bg-gray-600 rounded-xl;
 }
 
 .hyper-link {
@@ -30,4 +72,15 @@
 
 .list {
   @apply w-full flex flex-col justify-between;
+}
+
+.list-item {
+  @apply p-2 w-full my-2 flex items-center justify-between;
+}
+.qty-btn {
+  @apply bg-gray-100 hover:bg-gray-200 transition h-8 w-8 rounded-2xl;
+}
+
+.order-btn {
+  @apply mt-4 py-3 px-4 w-full hover:bg-red-500 bg-gray-900 text-gray-100 font-semibold rounded-xl transition ease-in-out duration-500;
 }

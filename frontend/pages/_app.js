@@ -1,10 +1,15 @@
-import "@/styles/globals.css";
-import Layout from "@/components/Layout";
+import "../styles/globals.css";
+import { CartProvider } from "react-use-cart";
 import { AuthProvider } from "@/context/AuthContext";
+import "@fontsource/fugaz-one";
+import "@fontsource/barlow";
+
 export default function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
-      <Component {...pageProps} />
+      <CartProvider>
+        <Component {...pageProps} />
+      </CartProvider>
     </AuthProvider>
   );
 }
