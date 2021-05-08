@@ -14,8 +14,7 @@ h5,
 h6,
 p,
 label,
-input,
-button {
+input {
   @apply font-barlow;
 }
 

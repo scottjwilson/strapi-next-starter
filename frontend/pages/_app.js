@@ -1,15 +1,17 @@
-import "../styles/globals.css";
-import { CartProvider } from "react-use-cart";
+import "@/styles/globals.css";
+
 import { AuthProvider } from "@/context/AuthContext";
 import "@fontsource/fugaz-one";
 import "@fontsource/barlow";
+import { ThemeProvider } from "next-themes";
+import Layout from "@/components/Layout";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      <CartProvider>
+    <ThemeProvider attribute="class">
+      <Layout>
         <Component {...pageProps} />
-      </CartProvider>
-    </AuthProvider>
+      </Layout>
+    </ThemeProvider>
   );
 }

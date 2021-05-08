@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
-import Layout from "@/components/Layout";
+
 export default function NotFoundPage() {
   return (
-    <Layout title="Page Not found">
+    <>
+      <Head>
+        <title>Not Found</title>
+      </Head>
       <div className="py-40 flex flex-col items-center space-y-4">
         <h1 className="text-8xl font-extrabold">
           {" "}
@@ -29,6 +32,6 @@ export default function NotFoundPage() {
           </a>
         </Link>
       </div>
-    </Layout>
+    </>
   );
 }

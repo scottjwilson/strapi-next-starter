@@ -1,15 +1,16 @@
-import Head from "next/head";
-import Layout from "@/components/Layout";
+import Hero from "@/components/Hero";
+import Section from "@/components/Section";
 
-export default function About({ dishes }) {
-  return <Layout>About Page</Layout>;
+export default function AboutPage() {
+  return (
+    <>
+      <Hero subtitle="Hey I'm Scott," title="Let's build something great" />
+      <Section>
+        <p>
+          consectetur fuga necessitatibus rem voluptatibus, maiores harum odio
+          nesciunt enim ratione, tempore adipisci delectus.
+        </p>
+      </Section>
+    </>
+  );
 }
-
-// export async function getStaticProps() {
-//   const res = await fetch("http://localhost:1337/dishes");
-//   const dishes = await res.json();
-
-//   return {
-//     props: { dishes },
-//   };
-// }
